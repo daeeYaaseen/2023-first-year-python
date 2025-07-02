@@ -1,0 +1,214 @@
+'''import random
+
+def PlayGuessingGame():
+    print("----NUMBER GUESSING GAME----")
+    userName = input("User, what is your name? ")
+    
+    while True:
+        userFirst = input(f"{userName}, do you want to guess first? (yes/no): ").lower()
+        if userFirst == "yes":
+            print("Okay. You will guess first.")
+            userScore = userTurn()
+            print("Computer's turn.")
+            computerScore = computerTurn()
+            break
+        elif userFirst == "no":
+            print("Okay. Computer will guess first.")
+            computerScore = computerTurn()
+            print(f"{userName}'s turn")
+            userScore = userTurn()
+            break
+        else:
+            print("Invalid choice. Please choose 'yes' or 'no'.")
+
+    print("----GAME OVER----")
+    print(f"{userName}, your score is", userScore)
+    print("Computer's score is", computerScore)
+
+    if userScore > computerScore:
+        print(f"{userName} won this game {userScore}:{computerScore}! Great stuff!")
+        print("Thanks for playing, chief!")
+    elif userScore < computerScore:
+        print(f"Computer won this game {computerScore}:{userScore}! Better luck next time, chief!")
+        print("Thanks for playing, chief!")
+    else:
+        print(f"It's a tie! {userScore}:{computerScore}")
+        print("Thanks for playing, chief!")
+
+    while True:
+        playAgain = input("Would you like to play again? (yes/no): ").lower()
+        if playAgain == "yes":
+            PlayGuessingGame()
+            break
+        elif playAgain == "no":
+            print("See you next time. Thanks for playing, chief!")
+            break
+        else:
+            print("Invalid choice. Please choose 'yes' or 'no'.")
+
+def computerTurn():
+    while True:
+        try:
+            userNumber = int(input("Enter a number for the computer to guess: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+    
+    print("You have picked a number. The computer will try to guess it!")
+
+    attemptsRemaining = 5
+    while attemptsRemaining > 0:
+        computerGuess = random.randint(0, 10)
+        print("Computer guesses", computerGuess)
+        if computerGuess == userNumber:
+            print(f"WOW! The computer has guessed it correctly in {6 - attemptsRemaining} attempts!")
+            return 50 - (5 - attemptsRemaining) * 10
+        elif computerGuess > userNumber:
+            print("Computer's guess was too high. Trying again.")
+        else:
+            print("Computer's guess was too low. Trying again.")
+        attemptsRemaining -= 1
+
+    print("The computer couldn't guess the number, which was", userNumber)
+    print("The computer's score will be displayed at the end. Suspense!!!")
+    return 0
+
+def userTurn():
+    computerNumber = random.randint(0, 10)
+    print("The computer has picked a number between 0 and 10. Try to guess what it is!")
+
+    attemptsRemaining = 5
+    while attemptsRemaining > 0:
+        while True:
+            try:
+                userGuess = int(input("Guess the number: "))
+                break
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+
+        if userGuess == computerNumber:
+            print(f"Congratulations, chief! You have guessed it correctly in {6 - attemptsRemaining} attempts!")
+            print("Your score will be displayed at the end. Suspense!!!")
+            return 50 - (5 - attemptsRemaining) * 10
+        elif userGuess < computerNumber:
+            print("Your guess was too low. Try again, chief!", attemptsRemaining - 1, "attempts remaining!")
+        else:
+            print("Your guess was too high. Try again, chief!", attemptsRemaining - 1, "attempts remaining!")
+        attemptsRemaining -= 1
+
+    print("You couldn't guess the number. The computer's number was", computerNumber)
+    print("Your score will be displayed at the end. Suspense!!!")
+    return 0
+
+PlayGuessingGame()
+
+'''
+
+
+import random
+
+def PlayGuessingGame():
+    print("----NUMBER GUESSING GAME----")
+    userName = input("User, what is your name? ")
+    
+    while True:
+        userFirst = input(f"{userName}, do you want to guess first? (yes/no): ").lower()
+        if userFirst == "yes":
+            print("Okay. You will guess first.")
+            userScore = userTurn()
+            print("User's score is", userScore)
+            print("Computer's turn.")
+            computerScore = computerTurn()
+            print("Computer's score is", computerScore)
+            break
+        elif userFirst == "no":
+            print("Okay. Computer will guess first.")
+            computerScore = computerTurn()
+            print("Computer's score is", computerScore)
+            print(f"{userName}'s turn")
+            userScore = userTurn()
+            print("User's score is", userScore)
+            break
+        else:
+            print("Invalid choice. Please choose 'yes' or 'no'.")
+
+    print("----GAME OVER----")
+    print(f"{userName}, your score is", userScore)
+    print("Computer's score is", computerScore)
+
+    if userScore > computerScore:
+        print(f"{userName} won this game {userScore}:{computerScore}! Great stuff!")
+        print("Thanks for playing, chief!")
+    elif userScore < computerScore:
+        print(f"Computer won this game {computerScore}:{userScore}! Better luck next time, chief!")
+        print("Thanks for playing, chief!")
+    else:
+        print(f"It's a tie! {userScore}:{computerScore}")
+        print("Thanks for playing, chief!")
+
+    while True:
+        playAgain = input("Would you like to play again? (yes/no): ").lower()
+        if playAgain == "yes":
+            PlayGuessingGame()
+            break
+        elif playAgain == "no":
+            print("See you next time. Thanks for playing, chief!")
+            break
+        else:
+            print("Invalid choice. Please choose 'yes' or 'no'.")
+
+def computerTurn():
+    while True:
+        try:
+            userNumber = int(input("Enter a number for the computer to guess: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+    
+    print("You have picked a number. The computer will try to guess it!")
+
+    attemptsRemaining = 5
+    while attemptsRemaining > 0:
+        computerGuess = random.randint(0, 10)
+        print("Computer guesses", computerGuess)
+        if computerGuess == userNumber:
+            print(f"WOW! The computer has guessed it correctly in {6 - attemptsRemaining} attempts!")
+            return 50 - (5 - attemptsRemaining) * 10
+        elif computerGuess > userNumber:
+            print("Computer's guess was too high. Trying again.")
+        else:
+            print("Computer's guess was too low. Trying again.")
+        attemptsRemaining -= 1
+
+    print("The computer couldn't guess the number, which was", userNumber)
+    
+    return 0
+
+def userTurn():
+    computerNumber = random.randint(0, 10)
+    print("The computer has picked a number between 0 and 10. Try to guess what it is!")
+
+    attemptsRemaining = 5
+    while attemptsRemaining > 0:
+        while True:
+            try:
+                userGuess = int(input("Guess the number: "))
+                break
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+
+        if userGuess == computerNumber:
+            print(f"Congratulations, chief! You have guessed it correctly in {6 - attemptsRemaining} attempts!")
+            print("Your score will be displayed at the end. Suspense!!!")
+            return 50 - (5 - attemptsRemaining) * 10
+        elif userGuess < computerNumber:
+            print("Your guess was too low. Try again, chief!", attemptsRemaining - 1, "attempts remaining!")
+        else:
+            print("Your guess was too high. Try again, chief!", attemptsRemaining - 1, "attempts remaining!")
+        attemptsRemaining -= 1
+
+    print("You couldn't guess the number. The computer's number was", computerNumber)
+    
+    return 0
+
+PlayGuessingGame()

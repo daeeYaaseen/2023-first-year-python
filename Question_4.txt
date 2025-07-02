@@ -1,0 +1,21 @@
+'''4.	Write an algorithm that reads in two numbers: alpha and beta. 
+The first number MUST be negative, while the second number MUST be positive. 
+Your algorithm should calculate the square roots of all numbers in the range of alpha and beta (including the boundaries, i.e. including alpha and beta).'''
+
+
+1. START
+2. READ alphaNumber = negative user input
+3. READ betaNumber = positive user input
+4. SET VARIABLES,  START_RANGE = alphaNumber, END_RANGE = betaNumber
+5. IMPORT MATH
+6.1. FOR i IN RANGE (alphaNumber, including betaNumber)
+    6.1.1. number = SQUARE ROOT OF i
+        6.1.2 IF i > 0 THEN 
+            6.1.3 DISPLAY number
+            6.2. ELSE
+                6.2.1 DISPLAY "ERROR"
+        6.3 END IF
+6.4. END FOR
+6.5. END                
+
+
